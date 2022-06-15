@@ -1,0 +1,11 @@
+/* components */
+
+@import 'components/header.css';
+@import 'components/nav.css';
+@import 'components/gallery.css';
+@import 'components/editor-area/grid.css';
+@import 'components/editor-area/canvas.css';
+
+/* setup */
+
+@import 'setup/var.css';

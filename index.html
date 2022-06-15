@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEMEGEN</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body onload="init()">
+    <header class="header-container ">
+
+        <img class="logo" src="img/LOGO.png">
+        <ul>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#">Memes</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+    </header>
+    <main>
+        <div class="nav">
+            <input class="search" type="text" placeholder="search">
+            <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+
+            <div class="words">
+                Funny Animal Men WOMAN comic smile
+            </div>
+
+            <div class="more">More</div>
+
+        </div>
+        <div class="gallery">
+            <img class="img" src="img/1.jpg">
+            <img class="img" src="img/2.jpg">
+            <img class="img" src="img/3.jpg">
+            <img class="img" src="img/4.jpg">
+            <img class="img" src="img/5.jpg">
+            <img class="img" src="img/6.jpg">
+            <img class="img" src="img/7.jpg">
+            <img class="img" src="img/8.jpg">
+            <img class="img" src="img/9.jpg">
+            <img class="img" src="img/10.jpg">
+            <img class="img" src="img/11.jpg">
+            <img class="img" src="img/12.jpg">
+            <img class="img" src="img/13.jpg">
+            <img class="img" src="img/14.jpg">
+            <img class="img" src="img/15.jpg">
+            <img class="img" src="img/16.jpg">
+            <img class="img" src="img/17.jpg">
+            <img class="img" src="img/18.jpg">
+        </div>
+
+
+    </main>
+
+    <div class="editor-area">
+        <div class="canvas-container">
+            <h3>Container</h3>
+            <canvas id="my-canvas" height="600" width="600"></canvas>
+        </div>
+
+
+        <section class="grid-container">
+            <input class="item item0" type="text" placeholder="I Am Brave">
+            <button class="item item1"><i class="fa-solid fa-arrow-up-arrow-down"></i></button>
+            <button class="item item2"><i class="fa-solid fa-plus"></i></button>
+            <button class="item item3"><i class="fa-solid fa-trash"></i></button>
+            <button class="item item4">A+</button>
+            <button class="item item5">A-</button>
+            <button class="item item6"><i class="fa-solid fa-align-left"></i></button>
+            <button class="item item7"><i class="fa-solid fa-align-center"></i></button>
+            <button class="item item8"><i class="fa-solid fa-align-right"></i></button>
+            <select class="item item9" onchange="setShape(this.value)">
+                <option value="line">impact</option>
+                <option value="triangle">Triangle</option>
+                <option value="rect">Rectangle</option>
+                <option value="circle">circle</option>
+            </select>
+            <button class="item item10"><i class="fa-solid fa-s"></i></button>
+            <button class="item item11"><i class="fa-solid fa-palette"></i></button>
+        </section>
+
+
+    </div>
+
+
+    <script src="https://kit.fontawesome.com/d81b10552f.js" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,16 @@
+#my-canvas {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    /* outline: 1px solid black; */
+    background-color: rgb(230, 120, 120);
+}
+
+.canvas-container {
+    border: 1px solid black;
+    text-align: center;
+    background-color: rgb(171, 29, 29);
+    margin: 0 auto;
+    width: 50%;
+    height: 600px;
+}
