@@ -63,23 +63,23 @@
 
 
         <section class="grid-container">
-            <input class="item item0" type="text" placeholder="I Am Brave">
+            <input class="item item0" type="text" placeholder="I Am Brave" oninput="onAddTxt(this.value)">
             <button class="item item1"><i class="fa-solid fa-arrow-up-arrow-down"></i></button>
-            <button class="item item2"><i class="fa-solid fa-plus"></i></button>
+            <button onclick="onPlusAnotherText()" class="item item2"><i class="fa-solid fa-plus"></i></button>
             <button class="item item3"><i class="fa-solid fa-trash"></i></button>
-            <button class="item item4">A+</button>
+            <button onclick="onBiggerFont()" class="item item4">A+</button>
             <button class="item item5">A-</button>
-            <button class="item item6"><i class="fa-solid fa-align-left"></i></button>
-            <button class="item item7"><i class="fa-solid fa-align-center"></i></button>
-            <button class="item item8"><i class="fa-solid fa-align-right"></i></button>
-            <select class="item item9" onchange="setShape(this.value)">
-                <option value="line">impact</option>
-                <option value="triangle">Triangle</option>
-                <option value="rect">Rectangle</option>
-                <option value="circle">circle</option>
+            <button onclick="onTextLeft()" class="item item6"><i class="fa-solid fa-align-left"></i></button>
+            <button onclick="onTextCenter()" class="item item7"><i class="fa-solid fa-align-center"></i></button>
+            <button onclick="onTextRight()" class="item item8"><i class="fa-solid fa-align-right"></i></button>
+            <select class="item item9" onchange="onSetFont(this.value)">
+                <option value="Impact">Impact</option>
+                <option value="Haettenschweiler">Haettenschweiler</option>
+                <option value="Arial Narrow Bold">Arial Narrow Bold</option>
+                <option value="sans-serif">sans-serif</option>
             </select>
-            <button class="item item10"><i class="fa-solid fa-s"></i></button>
-            <button class="item item11"><i class="fa-solid fa-palette"></i></button>
+            <button class="item item10"><i class="fa-solid fa-s"></i><input class="selectColor" oninput="OnSetStrokeColor(this.value)" type="color"></button>
+            <button class="item item11"><i class="fa-solid fa-palette"></i> <input class="selectColor" oninput="OnSetFillColor(this.value)" type="color"></button>
         </section>
 
 

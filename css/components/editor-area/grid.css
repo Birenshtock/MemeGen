@@ -101,3 +101,9 @@
     grid-column: 5/6;
     grid-row: 4/5;
 }
+
+.selectColor {
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+}
