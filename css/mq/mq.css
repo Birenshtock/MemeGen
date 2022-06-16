@@ -11,4 +11,12 @@
         width: 50px;
         font-size: 0.9em;
     }
+    .editor-area {
+        max-width: 740px;
+        display: block;
+    }
+    .grid-container {
+        width: 500px;
+        margin-left: 10px;
+    }
 }

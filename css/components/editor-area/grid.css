@@ -28,14 +28,15 @@
     border: solid 1px black;
 }
 
-.grid-container {
+
+/* .grid-container {
     width: 500px;
     height: 500px;
     margin: 100px auto;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(4, 1fr);
-}
+} */
 
 .item {
     border-radius: 5px;
