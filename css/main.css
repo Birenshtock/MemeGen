@@ -9,3 +9,7 @@
 /* setup */
 
 @import 'setup/var.css';
+
+/* mq */
+
+@import 'mq/mq.css'

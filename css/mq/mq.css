@@ -1,0 +1,14 @@
+@media screen and (max-width: 740px) {
+    /* and (min-width: 400px) */
+    .logo {
+        width: 90px;
+        height: 25px;
+    }
+    header {
+        max-width: 740px;
+    }
+    header li .hBtn {
+        width: 50px;
+        font-size: 0.9em;
+    }
+}

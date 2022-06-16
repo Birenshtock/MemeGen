@@ -1,7 +1,9 @@
 main {
-    width: 1243px;
-    height: 900px;
+    width: 100vw;
+    max-width: 1130px;
+    height: 100%;
     border-radius: 10px;
+    justify-content: center;
     background-color: #383b42;
 }
 
@@ -11,8 +13,8 @@ main {
 }
 
 .img {
-    width: 200px;
-    height: 173px;
+    width: 150px;
+    height: 140px;
     border-radius: 10px;
     margin: 10px;
 }
