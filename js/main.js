@@ -6,7 +6,7 @@ var gCtx;
 var gCurrText
 var gFillColor
 var gStrokeColor
-var gX = 100
+var gX = 50
 var gY = 100
 var gTextNum = 0
 var gCurrFont
@@ -105,10 +105,10 @@ function render() {
 
         gCtx.textAlign = gMappingTexts[xy].textAlign
         if (gMappingTexts[xy].textAlign === 'end') {
-            x = 500
+            x = 350
         } else if (gMappingTexts[xy].textAlign === 'center') {
             x = gCanvas.width / 2
-        } else { x = 100 }
+        } else { x = 50 }
         gCtx.fillText(textObj.text, parseInt(x), parseInt(y));
         gCtx.strokeText(textObj.text, parseInt(x), parseInt(y));
 
@@ -270,9 +270,9 @@ function onTextCenter() {
 function onPlusAnotherText() {
 
     if (gTextNum === 1) {
-        gY = 500
+        gY = 400
     } else if (gTextNum >= 2) {
-        gY = 300
+        gY = 220
     }
 }
 
@@ -293,7 +293,7 @@ function onSelectText() {
 
 function drawRect(x = 100, y) {
     gCtx.beginPath();
-    gCtx.rect(95, y, 410, 40);
+    gCtx.rect(40, y, 320, 40);
     gCtx.strokeStyle = 'black';
     gCtx.stroke();
 }
