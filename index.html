@@ -39,24 +39,36 @@
 
         </div>
         <div class="gallery">
-            <img id="01" class="img" src="img/1.jpg">
-            <img id="02" class="img" src="img/2.jpg">
-            <img id="03" class="img" src="img/3.jpg">
-            <img id="04" class="img" src="img/4.jpg">
-            <img id="05" class="img" src="img/5.jpg">
-            <img id="06" class="img" src="img/6.jpg">
-            <img id="07" class="img" src="img/7.jpg">
-            <img id="08" class="img" src="img/8.jpg">
-            <img id="09" class="img" src="img/9.jpg">
-            <img id="10" class="img" src="img/10.jpg">
-            <img id="11" class="img" src="img/11.jpg">
-            <img id="12" class="img" src="img/12.jpg">
-            <img id="13" class="img" src="img/13.jpg">
-            <img id="14" class="img" src="img/14.jpg">
-            <img id="15" class="img" src="img/15.jpg">
-            <img id="16" class="img" src="img/16.jpg">
-            <img id="17" class="img" src="img/17.jpg">
-            <img id="18" class="img" src="img/18.jpg">
+            <div class="gallery-row">
+
+                <img id="01" class="img" src="img/1.jpg">
+                <img id="02" class="img" src="img/2.jpg">
+                <img id="03" class="img" src="img/3.jpg">
+                <img id="04" class="img" src="img/4.jpg">
+                <img id="05" class="img" src="img/5.jpg">
+            </div>
+            <div class="gallery-row">
+
+                <img id="06" class="img" src="img/6.jpg">
+                <img id="07" class="img" src="img/7.jpg">
+                <img id="08" class="img" src="img/8.jpg">
+                <img id="09" class="img" src="img/9.jpg">
+                <img id="10" class="img" src="img/10.jpg">
+            </div>
+            <div class="gallery-row">
+
+                <img id="11" class="img" src="img/11.jpg">
+                <img id="12" class="img" src="img/12.jpg">
+                <img id="13" class="img" src="img/13.jpg">
+                <img id="14" class="img" src="img/14.jpg">
+                <img id="15" class="img" src="img/15.jpg">
+            </div>
+            <div class="gallery-row">
+                <img id="16" class="img" src="img/16.jpg">
+                <img id="17" class="img" src="img/17.jpg">
+                <img id="18" class="img" src="img/18.jpg">
+
+            </div>
         </div>
 
 
@@ -73,7 +85,7 @@
                 <button onclick="onPlusAnotherText()" class="item item2"><i class="fa-solid fa-plus"></i></button>
                 <button onclick="onDeleteText()" class="item item3"><i class="fa-solid fa-trash"></i></button>
                 <button onclick="onBiggerFont()" class="item item4">A+</button>
-                <button class="item item5">A-</button>
+                <button onclick="onSmallerFont()" class="item item5">A-</button>
                 <button onclick="onTextLeft()" class="item item6"><i class="fa-solid fa-align-left"></i></button>
                 <button onclick="onTextCenter()" class="item item7"><i class="fa-solid fa-align-center"></i></button>
                 <button onclick="onTextRight()" class="item item8"><i class="fa-solid fa-align-right"></i></button>
@@ -85,6 +97,8 @@
             </select>
                 <button class="item item10"><i class="fa-solid fa-s"></i><input class="selectColor" oninput="OnSetStrokeColor(this.value)" type="color"></button>
                 <button class="item item11"><i class="fa-solid fa-palette"></i> <input class="selectColor" oninput="OnSetFillColor(this.value)" type="color"></button>
+                <a href="#" onclick="downloadCanvas(this)" class="item item12" download="">Download</a>
+                <button class="item item13">Share</button>
             </section>
 
 

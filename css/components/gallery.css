@@ -1,22 +1,33 @@
+body {
+    background-color: rgb(48, 48, 57);
+}
+
 main {
-    width: 100vw;
+    width: 90%;
+    margin: auto;
+    margin-top: 15px;
     max-width: 1130px;
     height: 100%;
     border-radius: 10px;
     justify-content: center;
     background-color: #383b42;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .gallery {
     width: 90%;
+    margin: auto;
     align-self: center;
-    display: flex;
-    flex-wrap: wrap;
+    /* display: flex; */
+    /* flex-wrap: wrap; */
 }
 
+
+/* .gallery-row {} */
+
 .img {
-    width: 150px;
+    width: 17%;
     height: 140px;
     border-radius: 10px;
-    margin: 10px;
+    margin: 1%;
 }

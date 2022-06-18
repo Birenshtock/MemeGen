@@ -93,6 +93,8 @@ function render() {
         gCtx.fillStyle = gMappingTexts[xy].fillColor;
 
         gCtx.font = `40px ${gMappingTexts[xy].fontFamily}`
+        gCtx.font = gCtx.font.replace(/\d+px/, `${gMappingTexts[xy].fonSize}px`);
+
         var [x, y] = xy.split(',')
         x = gX
 
@@ -127,7 +129,7 @@ function drawText(text) {
         strokeColor: 'black',
         fontSizeAndFamily: '40px Impact',
         fontFamily: 'Impact',
-        // fontBiggerSize: 40
+        fonSize: 40,
         textAlign: 'start',
 
     }
@@ -193,19 +195,31 @@ function onSetFont(font) {
 }
 
 function onBiggerFont() {
-    var currSelectedSize = 40
 
     for (var [xy, textObj] of Object.entries(gMappingTexts)) {
         // gCtx.font = '40px Impact'
 
         if (gMappingTexts[xy].focus === true) {
-            gMappingTexts[xy].fontBiggerSize = currSelectedSize + 2
+            gMappingTexts[xy].fonSize = gMappingTexts[xy].fonSize + 2
+                // gMappingTexts[xy].fontBiggerSize = currSelectedSize + 2
                 // console.log(gMappingTexts)
-            render()
+            clearCanvas()
         }
     }
-    // gCtx.font = gCtx.font.replace(/\d+px/, (parseInt(gCtx.font.match(/\d+px/)) + 2) + "px");
-    // console.log('size:', gCtx.font)
+}
+
+function onSmallerFont() {
+    for (var [xy, textObj] of Object.entries(gMappingTexts)) {
+        // gCtx.font = '40px Impact'
+
+        if (gMappingTexts[xy].focus === true) {
+            gMappingTexts[xy].fonSize = gMappingTexts[xy].fonSize - 2
+                // gMappingTexts[xy].fontBiggerSize = currSelectedSize + 2
+                // console.log(gMappingTexts)
+            clearCanvas()
+        }
+    }
+
 }
 
 
@@ -284,4 +298,14 @@ function onGalleryClick() {
     document.querySelector('.hi').style.display = 'none'
     document.querySelector('main').style.display = 'block'
 
+}
+
+function downloadCanvas(elLink) {
+    //protect the image soo attacker could not download imgs from diff domain
+    const data = gCanvas.toDataURL() // for security reason you can`t do toDataUrl on tainted canvas
+        //This protects users from having private data exposed by using images
+        // to pull information from remote web sites without permission.
+    elLink.href = data
+    console.log(data)
+    elLink.download = 'my-img.jpg'
 }
