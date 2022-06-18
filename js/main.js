@@ -14,7 +14,11 @@ var gFocusIdx = -1
 var gIsSelected //ה-value של הkey שיש בו focus:true
 var gCurrImageId
 var gMappingTexts = {}
+    // var vanvas = document.getElementById('#my-canvas')
+    // vanvas.width = 100 %
+
 var gImgs = [{ id: '01', url: 'img/1.jpg' },
+
     { id: '02', url: 'img/2.jpg' },
     { id: '03', url: 'img/3.jpg' },
     { id: '04', url: 'img/4.jpg' },
