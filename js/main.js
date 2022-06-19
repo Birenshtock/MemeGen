@@ -8,6 +8,7 @@ var gFillColor
 var gStrokeColor
 var gX = 50
 var gY = 100
+var gNewY = 100
 var gTextNum = 0
 var gCurrFont
 var gFocusIdx = -1
@@ -97,8 +98,9 @@ function render() {
         gCtx.font = gCtx.font.replace(/\d+px/, `${gMappingTexts[xy].fonSize}px`);
 
         var [x, y] = xy.split(',')
-        x = gX
-
+            // x = gX
+            // y = gY
+            // y = gMappingTexts[xy].yPos
 
         gCtx.textAlign = gMappingTexts[xy].textAlign
         if (gMappingTexts[xy].textAlign === 'end') {
@@ -111,8 +113,6 @@ function render() {
 
 
         if (gMappingTexts[xy].focus === true) {
-            // drawRect(parseInt(xy.split(',')[0] - 20), parseInt(xy.split(',')[1] - 30))
-            // drawRect(parseInt(x), parseInt(y))
             drawRect(x, y - 35)
         }
     }
@@ -124,6 +124,8 @@ function drawText(text) {
     gMappingTexts[`
             ${gX}, ${gY}
             `] = {
+        x: 100,
+        yPos: 100,
         text,
         focus: false,
         fillColor: 'black',
@@ -136,6 +138,43 @@ function drawText(text) {
     }
     console.log('gMappingTexts', gMappingTexts)
     clearCanvas()
+}
+
+function onDownText() {
+
+    for (var [xy, textObj] of Object.entries(gMappingTexts)) {
+        gCtx.strokeStyle = 'black'
+
+        if (gMappingTexts[xy].focus === true) {
+            // var [x, y] = xy.split(',')
+            gMappingTexts[xy].yPos = gY + 5
+                // gNewY += 5
+
+            clearCanvas()
+        }
+    }
+}
+
+function onUpText() {
+    for (var [xy, textObj] of Object.entries(gMappingTexts)) {
+        gCtx.strokeStyle = 'black'
+
+        if (gMappingTexts[xy].focus === true) {
+            gY = gY - 5
+            clearCanvas()
+        }
+    }
+}
+
+function onPlusAnotherText() {
+
+    if (gTextNum === 1) {
+        // gMappingTexts[xy].yPos = 400
+        gY = 400
+    } else if (gTextNum >= 2) {
+        gY = 220
+            // gMappingTexts[xy].yPos = 220
+    }
 }
 
 function OnSetFillColor(FillColor) {
@@ -264,14 +303,7 @@ function onTextCenter() {
     }
 }
 
-function onPlusAnotherText() {
 
-    if (gTextNum === 1) {
-        gY = 400
-    } else if (gTextNum >= 2) {
-        gY = 220
-    }
-}
 
 function onSelectText() {
     gFocusIdx++
@@ -296,8 +328,6 @@ function drawRect(x = 100, y) {
 }
 
 function onGalleryClick() {
-    elNav.style.display = "block"
-        // clearCanvas()
 
     document.querySelector('.hi').style.display = 'none'
     document.querySelector('main').style.display = 'block'
@@ -331,18 +361,23 @@ function downloadCanvas(elLink) {
 
 
 
-var elNav = document.querySelector('ul')
-    // var elOpacityBg = document.querySelector('.opacity-bg')
+// var elNav = document.querySelector('ul')
+// var elOpacityBg = document.querySelector('.opacity-bg')
+
+// function toggleMenu(elBtn) {
+//     document.body.classList.toggle('menu-open');
+//     if (document.body.classList.contains('menu-open')) {
+//         elBtn.innerText = 'X'
+//             // elNav.style.display = "block"
+//     } else {
+//         elBtn.innerText = '☰'
+//             // elNav.style.display = "none"
+//     }
+// }
 
 function toggleMenu(elBtn) {
     document.body.classList.toggle('menu-open');
-    if (document.body.classList.contains('menu-open')) {
-        elBtn.innerText = 'X'
-        elNav.style.display = "block"
-    } else {
-        elBtn.innerText = '☰'
-        elNav.style.display = "none"
-    }
+    document.body.classList.contains('menu-open') ? elBtn.innerText = 'X' : elBtn.innerText = '☰';
 }
 
 
