@@ -70,9 +70,6 @@ selectedPhoto.forEach(image => {
 
 
 
-
-
-
 function drawImgFromlocal() {
     var img = new Image()
         // img.src = 'img/3.jpg'
@@ -299,12 +296,27 @@ function drawRect(x = 100, y) {
 }
 
 function onGalleryClick() {
+    elNav.style.display = "block"
+        // clearCanvas()
+
     document.querySelector('.hi').style.display = 'none'
     document.querySelector('main').style.display = 'block'
 
 }
 
 function downloadCanvas(elLink) {
+
+    for (var [xy, textObj] of Object.entries(gMappingTexts)) {
+        // gCtx.font = '40px Impact'
+
+        if (gMappingTexts[xy].focus === true) {
+
+            // gIsSelected.fillColor = FillColor
+            gMappingTexts[xy].focus = false
+            clearCanvas()
+        }
+    }
+
     //protect the image soo attacker could not download imgs from diff domain
     const data = gCanvas.toDataURL() // for security reason you can`t do toDataUrl on tainted canvas
         //This protects users from having private data exposed by using images
@@ -312,4 +324,38 @@ function downloadCanvas(elLink) {
     elLink.href = data
     console.log(data)
     elLink.download = 'my-img.jpg'
+
+
 }
+
+
+
+
+var elNav = document.querySelector('ul')
+    // var elOpacityBg = document.querySelector('.opacity-bg')
+
+function toggleMenu(elBtn) {
+    document.body.classList.toggle('menu-open');
+    if (document.body.classList.contains('menu-open')) {
+        elBtn.innerText = 'X'
+        elNav.style.display = "block"
+    } else {
+        elBtn.innerText = '☰'
+        elNav.style.display = "none"
+    }
+}
+
+
+// }
+
+// function openModal() {
+//     // elOpacityBg.style.display = "block"
+//     elModal.style.display = "block"
+
+// }
+
+// function closeModal() {
+//     elModal.style.display = "none"
+//         // elOpacityBg.style.display = "none"
+
+// }

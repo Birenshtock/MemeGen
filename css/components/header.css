@@ -12,6 +12,10 @@
             align-self: center;
         }
         
+        .menu-toggle {
+            display: none;
+        }
+        
         header {
             display: flex;
             justify-content: space-between;
@@ -26,12 +30,14 @@
         
         ul {
             display: flex;
+            flex-direction: row;
             text-decoration: none;
             list-style-type: none;
-            /* justify-content: space-between; */
+            /* display: block; */
         }
         
         header li .hBtn {
+            display: block;
             width: 100px;
             height: 40px;
             box-shadow: 0 3px 6px 1px rgba(0, 0, 0, 0.15);
