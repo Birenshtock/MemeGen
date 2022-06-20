@@ -10,7 +10,7 @@
 </head>
 
 <body onload="init()">
-    <div class="header-father"></div>
+
     <header class="header-container ">
 
         <img class="logo" src="img/LOGO.png">
@@ -97,16 +97,21 @@
                 <button class="item item10"><i class="fa-solid fa-s"></i><input class="selectColor" oninput="OnSetStrokeColor(this.value)" type="color"></button>
                 <button class="item item11"> <span> <i class="fa-solid fa-palette"></i> </span> <input class="selectColor" oninput="OnSetFillColor(this.value)" type="color"></button>
                 <a href="#" onclick="downloadCanvas(this)" class="item item12" download="">Download</a>
-                <button class="item item13">Share</button>
+                <button onclick="uploadImg()" class="item item13">Share</button>
+                <!-- <button onclick="onSave()" class="item item17">save</button> -->
             </section>
+            <p class="user-msg"></p>
+            <div class="share-container"></div>
+            <div class="savedMemes">
+                <img id="imgPreview" src="" alt="">
 
-
+            </div>
         </div>
     </div>
 
 
-
     <script src="https://kit.fontawesome.com/d81b10552f.js" crossorigin="anonymous"></script>
+    <script src="js/uploadServices.js"></script>
     <script src="js/main.js"></script>
 </body>
 

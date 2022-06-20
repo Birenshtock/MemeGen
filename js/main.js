@@ -15,6 +15,7 @@ var gFocusIdx = -1
 var gIsSelected //ה-value של הkey שיש בו focus:true
 var gCurrImageId
 var gMappingTexts = {}
+const STORAGE_KEY = 'imgDB'
     // var vanvas = document.getElementById('#my-canvas')
     // vanvas.width = 100 %
 
@@ -38,6 +39,14 @@ var gImgs = [{ id: '01', url: 'img/1.jpg' },
     { id: 17, url: 'img/17.jpg' },
     { id: 18, url: 'img/18.jpg' },
 ];
+
+function _saveMemeToStorage() {
+    saveToStorage(STORAGE_KEY, gMappingTexts)
+}
+
+function onMemeClick() {
+    var meme = loadFromStorage(STORAGE_KEY)
+}
 
 
 function init() {
@@ -336,27 +345,22 @@ function onGalleryClick() {
 
 function downloadCanvas(elLink) {
 
-    for (var [xy, textObj] of Object.entries(gMappingTexts)) {
-        // gCtx.font = '40px Impact'
+    // for (var [xy, textObj] of Object.entries(gMappingTexts)) {
+    //     if (gMappingTexts[xy].focus === true) {
+    //         gMappingTexts[xy].focus = false
+    //         clearCanvas()
+    //     }
+    // }
 
-        if (gMappingTexts[xy].focus === true) {
 
-            // gIsSelected.fillColor = FillColor
-            gMappingTexts[xy].focus = false
-            clearCanvas()
-        }
-    }
-
-    //protect the image soo attacker could not download imgs from diff domain
-    const data = gCanvas.toDataURL() // for security reason you can`t do toDataUrl on tainted canvas
-        //This protects users from having private data exposed by using images
-        // to pull information from remote web sites without permission.
+    const data = gCanvas.toDataURL() // for 
     elLink.href = data
     console.log(data)
     elLink.download = 'my-img.jpg'
-
+    console.log('jjjj')
 
 }
+
 
 
 
